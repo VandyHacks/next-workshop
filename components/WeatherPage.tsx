@@ -1,29 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
-
-enum WeatherIcon {
-  ClearSky = "01d",
-  FewClouds = "02d",
-  ScatteredClouds = "03d",
-  BrokenClouds = "04d",
-  ShowerRain = "09d",
-  Rain = "10d",
-  Thunderstorm = "11d",
-  Snow = "13d",
-  Mist = "50d",
-}
-
-const WeatherIconMap: Record<string, WeatherIcon> = {
-  "Clear sky": WeatherIcon.ClearSky,
-  "Few clouds": WeatherIcon.FewClouds,
-  "Scattered clouds": WeatherIcon.ScatteredClouds,
-  "Broken clouds": WeatherIcon.BrokenClouds,
-  "Shower rain": WeatherIcon.ShowerRain,
-  Rain: WeatherIcon.Rain,
-  Thunderstorm: WeatherIcon.Thunderstorm,
-  Snow: WeatherIcon.Snow,
-  Mist: WeatherIcon.Mist,
-};
+import { WeatherIconMap } from "@/helpers/constants";
 
 type Weather = {
   city: string;
@@ -65,7 +42,7 @@ const WeatherPage: FC<Weather> = (weather) => {
 
           {/* Temperature */}
           <p className="text-4xl font-bold text-gray-800 mb-2">
-            {weather.temp}°C
+            {weather.temp}°F
           </p>
 
           {/* Weather Description */}

@@ -25,10 +25,7 @@ const Home: FC = () => {
         {/* Weather Cards - Flexbox Row */}
         <div className="flex flex-wrap justify-center gap-8">
           {cities.map((city) => (
-            <Link
-              href={`/${city.toLowerCase().replaceAll(" ", "_")}`}
-              key={city}
-            >
+            <Link href={`/${city.replaceAll(" ", "_")}`} key={city}>
               <WeatherCard city={city} />
             </Link>
           ))}
