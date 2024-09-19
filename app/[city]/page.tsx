@@ -7,7 +7,10 @@ import { useEffect, useState } from "react";
 export default function Page({ params }: { params: { city: string } }) {
   // https://docs.tomorrow.io/reference/realtime-weather
   const cityNameEdited = params.city.replace("_", " ");
-  const [weather, setWeather] = useState({ temperature: 0, description: "" });
+  const [weather, setWeather] = useState({
+    temperature: 0,
+    description: "Clear sky",
+  });
 
   useEffect(() => {
     fetch(`/api/getWeather?city=${cityNameEdited}`)
