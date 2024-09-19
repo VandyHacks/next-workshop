@@ -6,6 +6,7 @@ type Weather = {
   city: string;
   temp: number;
   description: string;
+  humidity?: number;
 };
 
 const WeatherPage: FC<Weather> = (weather) => {
@@ -49,6 +50,13 @@ const WeatherPage: FC<Weather> = (weather) => {
           <p className="text-lg text-gray-600 capitalize">
             {weather.description}
           </p>
+
+          {/* Humidity */}
+          {weather.humidity && (
+            <p className="text-sm text-gray-500 mt-2">
+              Humidity: {weather.humidity}%
+            </p>
+          )}
         </div>
       </div>
     </div>
